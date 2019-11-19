@@ -1,8 +1,13 @@
-var person = {
-    name: "Joao",
-    printDoing(doing) {
-        console.log(this.name + doing)
-    }
+function ask(question) {
+    console.log(this.teacher,this.son, question)
 }
 
-person.printDoing(" está brincando lá fora")
+function otherClass() {
+    var myContext = {
+        teacher: "Suzy",
+        son: "Marie",
+    }
+    ask.call(myContext,"Why?")
+}
+
+otherClass()
