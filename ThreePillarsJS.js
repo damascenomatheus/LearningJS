@@ -1,11 +1,8 @@
-var teste = "João"
-
-function holdName(teste) {
-    return function () {
-        console.log(teste);
+var person = {
+    name: "Joao",
+    printDoing(doing) {
+        console.log(this.name + doing)
     }
 }
 
-var teste2 = holdName(teste)
-
-teste2()
+person.printDoing(" está brincando lá fora")
