@@ -1,13 +1,29 @@
-var teste = "João"
+class Bookshelf {
+    constructor() {
+        this.favoriteBooks = []
+    }
+
+    addFavoriteBook(bookName) {
+        if (!(bookName.includes("Great"))) {
+            this.favoriteBooks.push(bookName)
+        }
+    }
 
 
-function nameFunc(teste) {
-    return function printName() {
-        console.log(teste)
+    printFavoriteBooks() {
+        console.log(`Favorite Books: ${String(this.favoriteBooks.length)}`)
+        for(let books of this.favoriteBooks) {
+         console.log(books)
+        }
     }
 }
 
-var teste2 = nameFunc(teste)
+var books = new Bookshelf()
 
-teste2()
+books.addFavoriteBook("A Song of Ice and Fire")
+books.addFavoriteBook("The Great Gatsby")
+books.addFavoriteBook("Crime & Punishment")
+books.addFavoriteBook("Great Expectations")
+books.addFavoriteBook("You Don't Know JS")
 
+books.printFavoriteBooks()
