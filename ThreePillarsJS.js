@@ -4,16 +4,21 @@ class Bookshelf {
     } 
 
     addFavoriteBook(bookname) {
-        this.favoriteBooks.push(bookname)
+        if(!bookname.includes("Great")){
+            this.favoriteBooks.push(bookname)
+        }
     }
 
     printFavoriteBooks() {
+        console.log(`Favorite Books: ${this.favoriteBooks.length}`)
         this.favoriteBooks.forEach(book => {
             console.log(book)
         });
     }
 
 }
+
+
 
 //TODO LOADBOOKS FUNCTION THAT CALL FAKE REQUEST WITH CALLBACK PARAMETERS
 
