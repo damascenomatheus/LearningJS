@@ -18,7 +18,24 @@ class Bookshelf {
 
 }
 
+var BOOK_API = "https://some.url/api"
 
+function loadBooks() {
+    fakeAjax(BOOK_API,Bookshelf)
+}
+
+
+function fakeAjax(url,cb) {
+	setTimeout(function fakeLoadingDelay(){
+		cb([
+			"A Song of Ice and Fire",
+			"The Great Gatsby",
+			"Crime & Punishment",
+			"Great Expectations",
+			"You Don't Know JS"
+		]);
+	},500);
+}
 
 //TODO LOADBOOKS FUNCTION THAT CALL FAKE REQUEST WITH CALLBACK PARAMETERS
 
