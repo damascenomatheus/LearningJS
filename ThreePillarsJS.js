@@ -19,11 +19,14 @@ class Bookshelf {
 }
 
 var BOOK_API = "https://some.url/api"
+var bookshelf = new Bookshelf
 
-function loadBooks() {
-    fakeAjax(BOOK_API,Bookshelf)
+function loadBooks(bookshelf) {
+    fakeAjax(BOOK_API, (books)=>{for(let book of books){
+            bookshelf.addFavoriteBook(book)
+        }
+    })
 }
-
 
 function fakeAjax(url,cb) {
 	setTimeout(function fakeLoadingDelay(){
@@ -37,8 +40,6 @@ function fakeAjax(url,cb) {
 	},500);
 }
 
-//TODO LOADBOOKS FUNCTION THAT CALL FAKE REQUEST WITH CALLBACK PARAMETERS
 
-//VAR BOOKAPI
-
-//FAKE REQUEST FUNCTION WITH URL AND CALLBACK PARAMETER
+loadBooks(bookshelf)
+bookshelf.printFavoriteBooks()
