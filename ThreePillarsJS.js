@@ -19,12 +19,14 @@ class Bookshelf {
 }
 
 var BOOK_API = "https://some.url/api"
-var bookshelf = new Bookshelf
+var mainBookshelf = new Bookshelf
 
 function loadBooks(bookshelf) {
-    fakeAjax(BOOK_API, (books)=>{for(let book of books){
+    fakeAjax(BOOK_API, (books)=>{
+        for(let book of books){
             bookshelf.addFavoriteBook(book)
         }
+        bookshelf.printFavoriteBooks() 
     })
 }
 
@@ -41,5 +43,4 @@ function fakeAjax(url,cb) {
 }
 
 
-loadBooks(bookshelf)
-bookshelf.printFavoriteBooks()
+loadBooks(mainBookshelf)
