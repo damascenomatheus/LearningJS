@@ -8,9 +8,9 @@ function addFavoriteBook(bookName) {
 
 function printFavoriteBooks() {
     console.log(`Favorite Books: ${favoriteBook.length}`)
-    for(let books of favoriteBook) {
+    favoriteBook.forEach(books => {
         console.log(books)
-    }
+    })
 }
 
 addFavoriteBook("A Song of Ice and Fire")
